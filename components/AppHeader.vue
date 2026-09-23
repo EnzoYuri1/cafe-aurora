@@ -5,7 +5,7 @@ const cart = useCartStore()
 const links = [
   { label: 'Início', to: '/' },
   { label: 'Cardápio', to: '/cardapio' },
-  { label: 'Sobre nós', to: '/#sobre' },
+  { label: 'Sobre nós', to: '/sobre' },
   { label: 'Contato', to: '/#contato' }
 ]
 

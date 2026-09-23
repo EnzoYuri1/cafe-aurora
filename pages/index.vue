@@ -88,14 +88,6 @@ useSeoMeta({
             width="1200"
             height="900"
           >
-          <div
-            class="absolute -bottom-6 right-4 max-w-[16rem] rounded-2xl bg-white p-5 shadow-lift sm:right-6"
-          >
-            <p class="text-sm font-semibold text-espresso">Torra da casa</p>
-            <p class="mt-1.5 text-xs leading-relaxed text-muted">
-              Notas de chocolate, caramelo e um final delicado.
-            </p>
-          </div>
         </div>
       </div>
     </section>

@@ -33,7 +33,6 @@ watch(
         class="flex items-center gap-2 font-serif text-lg font-semibold tracking-wide text-espresso"
         aria-label="Café Aurora — página inicial"
       >
-        <span aria-hidden="true">☕</span>
         <span>CAFÉ AURORA</span>
       </NuxtLink>
 

@@ -23,7 +23,7 @@ const year = new Date().getFullYear()
       <div class="container-page grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
         <div>
           <p class="flex items-center gap-2 font-serif text-lg font-semibold text-cream">
-            <span aria-hidden="true">☕</span> CAFÉ AURORA
+             CAFÉ AURORA
           </p>
           <p class="mt-4 max-w-xs text-sm leading-relaxed text-cream/65">
             Café especial, comida feita à mão e um espaço para viver o tempo com mais calma.

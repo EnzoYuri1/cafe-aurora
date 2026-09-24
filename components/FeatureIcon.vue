@@ -21,7 +21,7 @@ const paths: Record<string, string> = {
 <template>
   <div class="flex flex-col items-start gap-4">
     <span
-      class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-cream-dark text-olive-dark"
+      class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-cream-dark text-olive-dark dark:bg-espresso dark:text-olive-light"
       aria-hidden="true"
     >
       <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">

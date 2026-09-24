@@ -9,7 +9,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <div class="flex min-h-screen flex-col items-center justify-center bg-cream px-5 text-center">
+  <div class="flex min-h-screen flex-col items-center justify-center bg-cream px-5 text-center dark:bg-espresso-deep">
     <p class="eyebrow">{{ error?.statusCode || 500 }}</p>
     <h1 class="mt-4 text-4xl">
       {{ isNotFound ? 'Esse sabor não existe.' : 'Algo deu errado.' }}

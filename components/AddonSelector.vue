@@ -31,7 +31,7 @@ const toggle = (label: string) => {
       :class="
         modelValue.includes(option.label)
           ? 'border-olive bg-olive text-cream'
-          : 'border-espresso/15 bg-white text-espresso hover:border-espresso/40'
+          : 'border-espresso/15 bg-white text-espresso hover:border-espresso/40 dark:border-cream/15 dark:bg-espresso dark:text-cream dark:hover:border-cream/40'
       "
       @click="toggle(option.label)"
     >

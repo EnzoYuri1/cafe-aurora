@@ -29,6 +29,16 @@ export const useCartStore = defineStore('cart', () => {
     items.value = items.value.filter((item) => item.id !== id)
   }
 
+  function setQuantity(id: string, quantity: number) {
+    const item = items.value.find((current) => current.id === id)
+    if (!item) return
+    if (quantity <= 0) {
+      removeItem(id)
+      return
+    }
+    item.quantity = quantity
+  }
+
   function clearCart() {
     items.value = []
   }
@@ -48,6 +58,7 @@ export const useCartStore = defineStore('cart', () => {
     total,
     addItem,
     removeItem,
+    setQuantity,
     clearCart,
     openCart,
     closeCart

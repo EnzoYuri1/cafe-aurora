@@ -60,16 +60,16 @@ useSeoMeta({
     <!-- Nossa história -->
     <section class="container-page pb-16 sm:pb-24" aria-labelledby="historia-title">
       <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-        <div class="overflow-hidden rounded-2xl shadow-md">
-          <img
-src="https://images.unsplash.com/photo-1758525225676-329ddcedf78f?w=800&auto=format&fit=crop&q=80"
-        alt="Ana e Laura tomando café juntas no Café Aurora"
-            class="h-[320px] w-full object-cover sm:h-[440px]"
-            loading="lazy"
+<div class="overflow-hidden rounded-2xl shadow-md">
+          <LazyImage
+            src="https://images.unsplash.com/photo-1758525225676-329ddcedf78f?w=800&auto=format&fit=crop&q=80"
+            alt="Ana e Laura tomando café juntas no Café Aurora"
+            class="h-[320px] w-full sm:h-[440px]"
             width="1200"
             height="900"
-          >
+          />
         </div>
+        <RevealOnScroll>
         <div class="max-w-xl">
           <p class="eyebrow">Desde 2018</p>
           <h2 id="historia-title" class="mt-4 text-3xl sm:text-4xl">
@@ -87,33 +87,42 @@ src="https://images.unsplash.com/photo-1758525225676-329ddcedf78f?w=800&auto=for
             aquele que aproxima.
           </p>
         </div>
+      </RevealOnScroll>
       </div>
     </section>
 
     <!-- Nossa filosofia -->
     <section aria-labelledby="filosofia-title">
       <div class="container-page pb-16 sm:pb-24">
-        <div class="mx-auto max-w-2xl text-center">
-          <p class="eyebrow">O que guia o nosso trabalho</p>
-          <h2 id="filosofia-title" class="mt-4 text-3xl sm:text-4xl">
-            Nossa filosofia
-          </h2>
-        </div>
+        <RevealOnScroll>
+          <div class="mx-auto max-w-2xl text-center">
+            <p class="eyebrow">O que guia o nosso trabalho</p>
+            <h2 id="filosofia-title" class="mt-4 text-3xl sm:text-4xl">
+              Nossa filosofia
+            </h2>
+          </div>
+        </RevealOnScroll>
 
         <div class="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-          <FeatureIcon
-            v-for="feature in features"
+          <RevealOnScroll
+            v-for="(feature, index) in features"
             :key="feature.title"
-            :icon="feature.icon"
-            :title="feature.title"
-            :description="feature.description"
-          />
+            :delay="index * 80"
+          >
+            <FeatureIcon
+              :icon="feature.icon"
+              :title="feature.title"
+              :description="feature.description"
+            />
+          </RevealOnScroll>
         </div>
       </div>
 
-      <div class="bg-sage py-16 sm:py-24">
+      <div class="bg-sage py-16 sm:py-24 dark:bg-[#2F3B2F]">
         <div class="container-page">
-          <PhotoGrid :photos="galleryPhotos" />
+          <RevealOnScroll>
+            <PhotoGrid :photos="galleryPhotos" />
+          </RevealOnScroll>
         </div>
       </div>
     </section>

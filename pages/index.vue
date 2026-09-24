@@ -81,13 +81,14 @@ useSeoMeta({
         </div>
 
         <div class="relative">
-          <img
+          <LazyImage
             src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=80"
             alt="Interior aconchegante da cafeteria com xícara de café em primeiro plano"
-            class="h-[360px] w-full rounded-card object-cover shadow-lift sm:h-[460px]"
+            class="h-[360px] w-full rounded-card shadow-lift sm:h-[460px]"
             width="1200"
             height="900"
-          >
+            loading="eager"
+          />
         </div>
       </div>
     </section>
@@ -96,88 +97,109 @@ useSeoMeta({
     <section id="favoritos" class="py-16 sm:py-24" aria-labelledby="favoritos-title">
       <div class="container-page">
         <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <div>
-            <p class="eyebrow">Escolhas da casa</p>
-            <h2 id="favoritos-title" class="mt-4 text-3xl sm:text-4xl">Nossos favoritos</h2>
-          </div>
+          <RevealOnScroll>
+            <div>
+              <p class="eyebrow">Escolhas da casa</p>
+              <h2 id="favoritos-title" class="mt-4 text-3xl sm:text-4xl">Nossos favoritos</h2>
+            </div>
+          </RevealOnScroll>
           <p class="max-w-sm text-sm leading-relaxed text-muted md:text-right">
             Receitas queridas, ingredientes selecionados e preparo cuidadoso em cada pedido.
           </p>
         </div>
 
         <div class="mt-12 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
-          <ProductCard v-for="product in featured" :key="product.slug" :product="product" />
+          <RevealOnScroll
+            v-for="(product, index) in featured"
+            :key="product.slug"
+            :delay="index * 80"
+          >
+            <ProductCard :product="product" />
+          </RevealOnScroll>
         </div>
       </div>
     </section>
 
     <!-- Sobre -->
-    <section id="sobre" class="bg-white py-16 sm:py-24" aria-labelledby="sobre-title">
+    <section id="sobre" class="bg-white py-16 sm:py-24 dark:bg-espresso" aria-labelledby="sobre-title">
       <div class="container-page grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-        <img
+        <LazyImage
           src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1200&q=80"
           alt="Interior da cafeteria com mesas de madeira e luz natural"
-          class="h-[320px] w-full rounded-card object-cover shadow-soft sm:h-[440px]"
-          loading="lazy"
+          class="h-[320px] w-full rounded-card shadow-soft sm:h-[440px]"
           width="1200"
           height="900"
-        >
-        <div class="max-w-xl">
-          <p class="eyebrow">Nossa essência</p>
-          <h2 id="sobre-title" class="mt-4 text-3xl sm:text-4xl">Feito para desacelerar.</h2>
-          <p class="mt-6 leading-relaxed text-muted">
-            O Café Aurora nasceu para criar pausas verdadeiras no meio da rotina.
-            Selecionamos grãos de pequenos produtores, torramos em lotes reduzidos e
-            preparamos cada receita à mão — sempre com cuidado, frescor e tempo.
-          </p>
-          <p class="mt-4 leading-relaxed text-muted">
-            Um espaço acolhedor para conversar, trabalhar ou simplesmente apreciar um bom café.
-          </p>
-          <NuxtLink to="#diferenciais" class="btn-primary mt-8">
-            Conheça nossa história
-            <span aria-hidden="true">→</span>
-          </NuxtLink>
-        </div>
+        />
+        <RevealOnScroll>
+          <div class="max-w-xl">
+            <p class="eyebrow">Nossa essência</p>
+            <h2 id="sobre-title" class="mt-4 text-3xl sm:text-4xl">Feito para desacelerar.</h2>
+            <p class="mt-6 leading-relaxed text-muted">
+              O Café Aurora nasceu para criar pausas verdadeiras no meio da rotina.
+              Selecionamos grãos de pequenos produtores, torramos em lotes reduzidos e
+              preparamos cada receita à mão — sempre com cuidado, frescor e tempo.
+            </p>
+            <p class="mt-4 leading-relaxed text-muted">
+              Um espaço acolhedor para conversar, trabalhar ou simplesmente apreciar um bom café.
+            </p>
+            <NuxtLink to="#diferenciais" class="btn-primary mt-8">
+              Conheça nossa história
+              <span aria-hidden="true">→</span>
+            </NuxtLink>
+          </div>
+        </RevealOnScroll>
       </div>
     </section>
 
     <!-- Diferenciais -->
     <section id="diferenciais" class="py-16 sm:py-24" aria-labelledby="diferenciais-title">
       <div class="container-page">
-        <div class="max-w-2xl">
-          <p class="eyebrow">Por que Aurora?</p>
-          <h2 id="diferenciais-title" class="mt-4 text-3xl sm:text-4xl">
-            Cuidado em cada detalhe
-          </h2>
-        </div>
+        <RevealOnScroll>
+          <div class="max-w-2xl">
+            <p class="eyebrow">Por que Aurora?</p>
+            <h2 id="diferenciais-title" class="mt-4 text-3xl sm:text-4xl">
+              Cuidado em cada detalhe
+            </h2>
+          </div>
+        </RevealOnScroll>
         <div class="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-          <FeatureIcon
-            v-for="feature in features"
+          <RevealOnScroll
+            v-for="(feature, index) in features"
             :key="feature.title"
-            :icon="feature.icon"
-            :title="feature.title"
-            :description="feature.description"
-          />
+            :delay="index * 80"
+          >
+            <FeatureIcon
+              :icon="feature.icon"
+              :title="feature.title"
+              :description="feature.description"
+            />
+          </RevealOnScroll>
         </div>
       </div>
     </section>
 
     <!-- Depoimentos -->
-    <section class="bg-sage py-16 sm:py-24" aria-labelledby="depoimentos-title">
+    <section class="bg-sage py-16 sm:py-24 dark:bg-[#2F3B2F]" aria-labelledby="depoimentos-title">
       <div class="container-page">
-        <div class="max-w-2xl">
-          <p class="eyebrow">Boas conversas</p>
-          <h2 id="depoimentos-title" class="mt-4 text-3xl sm:text-4xl">
-            O que nossos clientes dizem
-          </h2>
-        </div>
+        <RevealOnScroll>
+            <div class="max-w-2xl">
+              <p class="eyebrow">Boas conversas</p>
+              <h2 id="depoimentos-title" class="mt-4 text-3xl sm:text-4xl">
+                O que nossos clientes dizem
+              </h2>
+            </div>
+          </RevealOnScroll>
         <div class="mt-12 grid gap-7 md:grid-cols-3">
-          <TestimonialCard
-            v-for="testimonial in testimonials"
+          <RevealOnScroll
+            v-for="(testimonial, index) in testimonials"
             :key="testimonial.author"
-            :quote="testimonial.quote"
-            :author="testimonial.author"
-          />
+            :delay="index * 80"
+          >
+            <TestimonialCard
+              :quote="testimonial.quote"
+              :author="testimonial.author"
+            />
+          </RevealOnScroll>
         </div>
       </div>
     </section>

@@ -65,9 +65,12 @@ html.dark {
     color: var(--text-muted);
   }
 
-  html.dark .text-espresso\/75,
-  html.dark .text-espresso\/80 {
+  html.dark .text-espresso\/75 {
     color: var(--text-secondary);
+  }
+
+  html.dark .text-espresso\/90 {
+    color: #d9c7ac;
   }
 
   html.dark .text-olive,

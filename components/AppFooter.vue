@@ -4,7 +4,7 @@ const year = new Date().getFullYear()
 
 <template>
   <footer id="contato">
-    <section class="bg-espresso-deep py-20 text-center text-cream" aria-labelledby="cta-title">
+    <section class="bg-espresso-deep py-20 text-center text-cream dark:bg-surface-primary" aria-labelledby="cta-title">
       <div class="container-page max-w-3xl">
         <h2 id="cta-title" class="text-3xl sm:text-4xl">
           Seu próximo café favorito está aqui.
@@ -19,7 +19,7 @@ const year = new Date().getFullYear()
       </div>
     </section>
 
-    <section class="bg-espresso py-16 text-cream/85">
+    <section class="bg-espresso py-16 text-cream/85 dark:bg-surface-secondary">
       <div class="container-page grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
         <div>
           <p class="flex items-center gap-2 font-serif text-lg font-semibold text-cream">

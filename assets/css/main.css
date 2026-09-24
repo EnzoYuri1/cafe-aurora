@@ -2,13 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg-primary: #f5efe6;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #ede4d7;
+  --text-primary: #3d2b1f;
+  --text-secondary: #5a4636;
+  --text-muted: #8c7b6b;
+  --accent-primary: #5a6b4e;
+  --accent-hover: #48573e;
+  --btn-primary-bg: #3d2b1f;
+  --btn-primary-text: #f5efe6;
+  --border-color: rgba(61, 43, 31, 0.12);
+}
+
+html.dark {
+  --bg-primary: #1c1410;
+  --bg-secondary: #2a1f18;
+  --bg-tertiary: #362a20;
+  --text-primary: #f5efe6;
+  --text-secondary: #c9beb0;
+  --text-muted: #9c8f7e;
+  --accent-primary: #a8b894;
+  --accent-hover: #b9c7a8;
+  --btn-primary-bg: #d4a574;
+  --btn-primary-text: #1c1410;
+  --border-color: #3d2e22;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-cream font-sans text-espresso antialiased transition-colors duration-300 dark:bg-espresso-deep dark:text-cream;
+    @apply bg-cream font-sans text-espresso antialiased transition-colors duration-300;
   }
 
   h1,
@@ -18,25 +46,37 @@
   }
 
   :focus-visible {
-    @apply outline-none ring-2 ring-olive ring-offset-2 ring-offset-cream dark:ring-offset-espresso-deep;
+    @apply outline-none ring-2 ring-olive ring-offset-2 ring-offset-cream;
   }
 }
 
 @layer utilities {
+  html.dark body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+  }
+
+  html.dark :focus-visible {
+    --tw-ring-color: var(--accent-primary);
+    --tw-ring-offset-color: var(--bg-primary);
+  }
+
   html.dark .text-muted {
-    color: #bfae9f;
+    color: var(--text-muted);
   }
 
-  html.dark .text-espresso\/75 {
-    color: rgb(245 239 230 / 0.75);
-  }
-
+  html.dark .text-espresso\/75,
   html.dark .text-espresso\/80 {
-    color: rgb(245 239 230 / 0.8);
+    color: var(--text-secondary);
   }
 
+  html.dark .text-olive,
   html.dark .text-olive-dark {
-    color: #8fa07f;
+    color: var(--accent-primary);
+  }
+
+  html.dark .text-espresso {
+    color: var(--text-primary);
   }
 }
 
@@ -53,15 +93,42 @@
     @apply inline-flex items-center justify-center gap-2 rounded-full bg-espresso px-6 py-3 text-sm font-medium text-cream transition duration-200 hover:bg-espresso-soft;
   }
 
+  html.dark .btn-primary {
+    background-color: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+  }
+
+  html.dark .btn-primary:hover {
+    background-color: var(--accent-hover);
+  }
+
   .btn-secondary {
     @apply inline-flex items-center justify-center gap-2 rounded-full bg-olive px-6 py-3 text-sm font-medium text-cream transition duration-200 hover:bg-olive-dark;
+  }
+
+  html.dark .btn-secondary {
+    background-color: var(--accent-primary);
+    color: var(--btn-primary-text);
+  }
+
+  html.dark .btn-secondary:hover {
+    background-color: var(--accent-hover);
   }
 
   .btn-light {
     @apply inline-flex items-center justify-center gap-2 rounded-full bg-cream px-6 py-3 text-sm font-medium text-espresso transition duration-200 hover:bg-cream-dark;
   }
 
+  html.dark .btn-light {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+  }
+
   .eyebrow {
     @apply text-xs font-semibold uppercase tracking-[0.2em] text-olive;
+  }
+
+  html.dark .eyebrow {
+    color: var(--accent-primary);
   }
 }

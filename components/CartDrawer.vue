@@ -84,12 +84,13 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown))
               :key="item.id"
               class="flex gap-4 rounded-2xl bg-white p-4 shadow-soft dark:bg-espresso"
             >
-              <LazyImage
+              <NuxtImg
                 :src="item.image"
                 :alt="item.name"
-                class="h-16 w-16 shrink-0 rounded-xl"
-                width="64"
-                height="64"
+                class="h-16 w-16 shrink-0 rounded-xl object-cover"
+                loading="lazy"
+                :width="128"
+                :height="128"
               />
               <div class="min-w-0 flex-1">
                 <div class="flex items-start justify-between gap-2">

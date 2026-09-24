@@ -17,13 +17,13 @@ defineProps<{
       :key="photo.id"
       class="overflow-hidden rounded-card shadow-soft"
     >
-      <LazyImage
+      <NuxtImg
         :src="photo.src"
         :alt="photo.alt"
-        class="aspect-[4/3] h-full w-full"
-        img-class="transition duration-500 hover:scale-105"
-        width="900"
-        height="675"
+        class="aspect-[4/3] h-full w-full object-cover transition duration-500 hover:scale-105"
+        loading="lazy"
+        :width="400"
+        :height="300"
       />
     </figure>
   </div>

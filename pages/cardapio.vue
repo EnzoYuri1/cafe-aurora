@@ -82,7 +82,7 @@ useSeoMeta({
           type="search"
           placeholder="Buscar no cardápio..."
           aria-label="Buscar no cardápio"
-          class="w-full rounded-full border border-espresso/15 bg-white py-3 pl-11 pr-4 text-sm placeholder:text-muted focus:border-olive focus:outline-none dark:border-cream/15 dark:bg-espresso dark:text-cream"
+          class="w-full rounded-full border border-espresso/15 bg-white py-3 pl-11 pr-4 text-sm placeholder:text-muted focus:border-olive focus:outline-none dark:border-line dark:bg-surface-tertiary dark:text-ink-primary"
         >
       </div>
 
@@ -100,8 +100,8 @@ useSeoMeta({
           class="rounded-full border px-5 py-2.5 text-sm font-medium transition"
           :class="
             activeCategory === category
-              ? 'border-espresso bg-espresso text-cream'
-              : 'border-espresso/15 bg-white text-espresso hover:border-espresso/40 dark:border-cream/15 dark:bg-espresso dark:text-cream dark:hover:border-cream/40'
+              ? 'border-espresso bg-espresso text-cream dark:border-accent dark:bg-surface-tertiary dark:text-ink-primary'
+              : 'border-espresso/15 bg-white text-espresso hover:border-espresso/40 dark:border-line dark:bg-surface-secondary dark:text-ink-secondary dark:hover:border-accent-hover'
           "
           @click="activeCategory = category"
         >

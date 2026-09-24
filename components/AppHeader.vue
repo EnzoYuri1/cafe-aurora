@@ -5,7 +5,6 @@ const colorMode = useColorMode()
 
 const links = [
   { label: 'Início', to: '/' },
-  { label: 'Cardápio', to: '/cardapio' },
   { label: 'Sobre nós', to: '/sobre' },
   { label: 'Contato', to: '/#contato' }
 ]
@@ -33,11 +32,11 @@ watch(
 </script>
 
 <template>
-  <header class="sticky top-0 z-40 border-b border-espresso/5 bg-cream/90 backdrop-blur dark:border-cream/10 dark:bg-espresso-deep/90">
+  <header class="sticky top-0 z-40 border-b border-espresso/5 bg-cream/90 backdrop-blur dark:border-line dark:bg-[#1C1410]/95">
     <div class="container-page flex h-16 items-center justify-between gap-4 sm:h-20">
       <NuxtLink
         to="/"
-        class="flex items-center gap-2 font-serif text-lg font-semibold tracking-wide text-espresso dark:text-cream"
+        class="flex items-center gap-2 font-serif text-lg font-semibold tracking-wide text-espresso dark:text-ink-primary"
         aria-label="Café Aurora — página inicial"
       >
         <span>CAFÉ AURORA</span>
@@ -48,8 +47,8 @@ watch(
           v-for="link in links"
           :key="link.label"
           :to="link.to"
-          class="text-sm font-medium text-espresso/75 transition hover:text-espresso dark:text-cream/75 dark:hover:text-cream"
-          :class="{ 'text-espresso dark:text-cream': isActive(link.to) }"
+          class="text-sm font-medium text-espresso/75 transition hover:text-espresso dark:text-ink-secondary dark:hover:text-ink-primary"
+          :class="{ 'text-espresso dark:text-ink-primary': isActive(link.to) }"
         >
           {{ link.label }}
         </NuxtLink>
@@ -59,7 +58,7 @@ watch(
         <ClientOnly>
           <button
             type="button"
-            class="flex h-11 w-11 items-center justify-center rounded-full text-espresso transition hover:bg-espresso/5 dark:text-cream dark:hover:bg-cream/5"
+            class="flex h-11 w-11 items-center justify-center rounded-full text-espresso transition hover:bg-espresso/5 dark:text-ink-primary dark:hover:bg-surface-tertiary"
             :aria-label="isDark ? 'Ativar modo claro' : 'Ativar modo escuro'"
             @click="toggleColorMode"
           >
@@ -81,7 +80,7 @@ watch(
           <template #fallback>
             <div
               aria-hidden="true"
-              class="flex h-11 w-11 items-center justify-center rounded-full text-espresso/40 dark:text-cream/40"
+              class="flex h-11 w-11 items-center justify-center rounded-full text-espresso/40 dark:text-ink-muted"
             >
               <span class="h-5 w-5 rounded-full border border-current opacity-40" />
             </div>
@@ -90,7 +89,7 @@ watch(
 
         <button
           type="button"
-          class="relative flex h-11 w-11 items-center justify-center rounded-full text-espresso transition hover:bg-espresso/5 dark:text-cream dark:hover:bg-cream/5"
+          class="relative flex h-11 w-11 items-center justify-center rounded-full text-espresso transition hover:bg-espresso/5 dark:text-ink-primary dark:hover:bg-surface-tertiary"
           :aria-label="`Abrir carrinho, ${cart.count} itens`"
           @click="cart.openCart()"
         >
@@ -99,7 +98,7 @@ watch(
           </svg>
           <span
             v-if="cart.count > 0"
-            class="absolute -right-0.5 -top-0.5 flex h-5 min-w-5 items-center justify-center rounded-full bg-olive px-1 text-[11px] font-semibold text-cream"
+            class="absolute -right-0.5 -top-0.5 flex h-5 min-w-5 items-center justify-center rounded-full bg-olive px-1 text-[11px] font-semibold text-cream dark:bg-accent dark:text-btn-text"
           >
             {{ cart.count }}
           </span>
@@ -112,7 +111,7 @@ watch(
 
         <button
           type="button"
-          class="flex h-11 w-11 items-center justify-center rounded-full text-espresso transition hover:bg-espresso/5 md:hidden dark:text-cream dark:hover:bg-cream/5"
+          class="flex h-11 w-11 items-center justify-center rounded-full text-espresso transition hover:bg-espresso/5 md:hidden dark:text-ink-primary dark:hover:bg-surface-tertiary"
           :aria-expanded="isOpen"
           aria-controls="menu-mobile"
           aria-label="Abrir menu"
@@ -132,13 +131,13 @@ watch(
       v-if="isOpen"
       id="menu-mobile"
       aria-label="Navegação mobile"
-      class="border-t border-espresso/5 bg-cream px-5 py-4 md:hidden dark:border-cream/10 dark:bg-espresso-deep"
+      class="border-t border-espresso/5 bg-cream px-5 py-4 md:hidden dark:border-line dark:bg-surface-primary"
     >
       <ul class="flex flex-col gap-1">
         <li v-for="link in links" :key="link.label">
           <NuxtLink
             :to="link.to"
-            class="block rounded-lg px-3 py-3 text-sm font-medium text-espresso transition hover:bg-espresso/5 dark:text-cream dark:hover:bg-cream/5"
+            class="block rounded-lg px-3 py-3 text-sm font-medium text-espresso transition hover:bg-espresso/5 dark:text-ink-primary dark:hover:bg-surface-tertiary"
           >
             {{ link.label }}
           </NuxtLink>

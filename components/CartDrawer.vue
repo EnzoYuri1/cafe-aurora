@@ -63,7 +63,7 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown))
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  d="M13.5 4.5v15m0 0h3.75a2.25 2.25 0 0 0 0-4.5H13.5m0 4.5V9.75A2.25 2.25 0 0 0 11.25 7.5H7.5A2.25 2.25 0 0 0 5.25 9.75v5.25m8.25-10.5H18A2.25 2.25 0 0 1 20.25 7.5v.75A2.25 2.25 0 0 1 18 10.5h-4.5"
+                  d="M10 2v2 M14 2v2 M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1 M6 2v2"
                 />
               </svg>
             </span>

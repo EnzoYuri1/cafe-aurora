@@ -1,7 +1,7 @@
 import type { Product, ProductCategory } from '~/types'
 
-const unsplash = (id: string, width = 900) =>
-  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${width}&q=80`
+const unsplash = (id: string, width = 800) =>
+  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${width}&q=75`
 
 export const products: Product[] = [
   {

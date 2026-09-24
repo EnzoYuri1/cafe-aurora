@@ -1,7 +1,12 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['@pinia/nuxt', '@nuxtjs/color-mode'],
+  modules: ['@pinia/nuxt', '@nuxtjs/color-mode', '@nuxt/image'],
+  image: {
+    domains: ['images.unsplash.com'],
+    format: ['webp', 'avif'],
+    quality: 75
+  },
   colorMode: {
     classSuffix: '',
     preference: 'system',

@@ -18,13 +18,13 @@ const decrement = () => {
 
 <template>
   <div
-    class="inline-flex items-center gap-1 rounded-full border border-espresso/15 bg-white p-1 dark:border-cream/15 dark:bg-espresso"
+    class="inline-flex items-center gap-1 rounded-full border border-espresso/15 bg-white p-1 dark:border-line dark:bg-surface-tertiary"
     role="group"
     aria-label="Quantidade"
   >
     <button
       type="button"
-      class="flex h-9 w-9 items-center justify-center rounded-full text-lg text-espresso transition hover:bg-espresso/5 disabled:cursor-not-allowed disabled:opacity-30 dark:text-cream dark:hover:bg-cream/5"
+      class="flex h-9 w-9 items-center justify-center rounded-full text-lg text-espresso transition hover:bg-espresso/5 disabled:cursor-not-allowed disabled:opacity-30 dark:text-ink-primary dark:hover:bg-surface-tertiary"
       aria-label="Diminuir quantidade"
       :disabled="modelValue <= min"
       @click="decrement"
@@ -40,7 +40,7 @@ const decrement = () => {
     </span>
     <button
       type="button"
-      class="flex h-9 w-9 items-center justify-center rounded-full text-lg text-espresso transition hover:bg-espresso/5 dark:text-cream dark:hover:bg-cream/5"
+      class="flex h-9 w-9 items-center justify-center rounded-full text-lg text-espresso transition hover:bg-espresso/5 dark:text-ink-primary dark:hover:bg-surface-tertiary"
       aria-label="Aumentar quantidade"
       @click="increment"
     >

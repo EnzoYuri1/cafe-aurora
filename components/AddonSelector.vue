@@ -30,8 +30,8 @@ const toggle = (label: string) => {
       class="rounded-full border px-5 py-2.5 text-sm font-medium transition"
       :class="
         modelValue.includes(option.label)
-          ? 'border-olive bg-olive text-cream'
-          : 'border-espresso/15 bg-white text-espresso hover:border-espresso/40 dark:border-cream/15 dark:bg-espresso dark:text-cream dark:hover:border-cream/40'
+          ? 'border-olive bg-olive text-cream dark:border-accent dark:bg-surface-tertiary dark:text-ink-primary'
+          : 'border-espresso/15 bg-white text-espresso hover:border-espresso/40 dark:border-line dark:bg-surface-secondary dark:text-ink-secondary dark:hover:border-accent-hover'
       "
       @click="toggle(option.label)"
     >

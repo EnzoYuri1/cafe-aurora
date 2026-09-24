@@ -17,14 +17,14 @@ defineProps<{
       :key="photo.id"
       class="overflow-hidden rounded-card shadow-soft"
     >
-      <img
+      <LazyImage
         :src="photo.src"
         :alt="photo.alt"
-        loading="lazy"
-        class="aspect-[4/3] h-full w-full object-cover transition duration-500 hover:scale-105"
+        class="aspect-[4/3] h-full w-full"
+        img-class="transition duration-500 hover:scale-105"
         width="900"
         height="675"
-      >
+      />
     </figure>
   </div>
 </template>

@@ -104,7 +104,7 @@ useSeoMeta({
             <h1 id="produto-title" class="mt-4 text-4xl sm:text-5xl">{{ current.name }}</h1>
 
             <div class="mt-4 flex items-center gap-2 text-sm">
-              <span class="text-olive" aria-hidden="true">★★★★★</span>
+              <span class="text-[#C9A227]" aria-hidden="true">★★★★★</span>
               <span class="sr-only">Avaliação {{ current.rating.toFixed(1) }} de 5</span>
               <span class="text-muted">
                 {{ current.rating.toFixed(1).replace('.', ',') }} · {{ current.reviewCount }} avaliações

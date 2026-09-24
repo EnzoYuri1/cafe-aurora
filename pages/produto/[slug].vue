@@ -51,6 +51,7 @@ const addToCart = () => {
     quantity: quantity.value,
     unitPrice: unitPrice.value
   })
+  cart.openCart()
   addedFeedback.value = true
   clearTimeout(feedbackTimer)
   feedbackTimer = setTimeout(() => {
@@ -86,13 +87,13 @@ useSeoMeta({
         </nav>
 
         <div class="grid gap-10 lg:grid-cols-2 lg:gap-16">
-          <img
+          <LazyImage
             :src="current.image"
             :alt="current.imageAlt"
-            class="h-[320px] w-full rounded-card object-cover shadow-soft sm:h-[480px]"
+            class="h-[320px] w-full rounded-card shadow-soft sm:h-[480px]"
             width="900"
             height="900"
-          >
+          />
 
           <div class="max-w-xl">
             <p class="eyebrow">Cafés da casa</p>
@@ -155,18 +156,22 @@ useSeoMeta({
       </div>
     </section>
 
-    <section class="border-t border-espresso/10 py-14 sm:py-20" aria-labelledby="relacionados-title">
+    <section class="border-t border-espresso/10 py-14 sm:py-20 dark:border-cream/10" aria-labelledby="relacionados-title">
       <div class="container-page">
         <h2 id="relacionados-title" class="text-2xl sm:text-3xl">
           Você também pode gostar
         </h2>
         <div class="mt-8 grid gap-7 sm:grid-cols-2 lg:grid-cols-4">
-          <ProductCard
-            v-for="item in related"
+          <RevealOnScroll
+            v-for="(item, index) in related"
             :key="item.slug"
-            :product="item"
-            cta-label="Ver detalhes"
-          />
+            :delay="index * 80"
+          >
+            <ProductCard
+              :product="item"
+              cta-label="Ver detalhes"
+            />
+          </RevealOnScroll>
         </div>
       </div>
     </section>

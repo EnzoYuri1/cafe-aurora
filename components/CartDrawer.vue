@@ -40,13 +40,13 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown))
         role="dialog"
         aria-modal="true"
         aria-label="Seu pedido"
-        class="fixed right-0 top-0 z-50 flex h-full w-full flex-col bg-cream shadow-lift dark:bg-espresso-deep sm:max-w-[420px]"
+        class="fixed right-0 top-0 z-50 flex h-full w-full flex-col bg-cream shadow-lift dark:bg-surface-primary sm:max-w-[420px]"
       >
-        <header class="flex items-center justify-between border-b border-espresso/10 px-6 py-5 dark:border-cream/10">
+        <header class="flex items-center justify-between border-b border-espresso/10 px-6 py-5 dark:border-line">
           <h2 class="text-xl">Seu pedido</h2>
           <button
             type="button"
-            class="flex h-10 w-10 items-center justify-center rounded-full text-espresso transition hover:bg-espresso/5 dark:text-cream dark:hover:bg-cream/5"
+            class="flex h-10 w-10 items-center justify-center rounded-full text-espresso transition hover:bg-espresso/5 dark:text-ink-primary dark:hover:bg-surface-tertiary"
             aria-label="Fechar carrinho"
             @click="cart.closeCart()"
           >
@@ -58,7 +58,7 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown))
 
         <div class="flex-1 overflow-y-auto px-6 py-5">
           <div v-if="cart.items.length === 0" class="flex flex-col items-center py-14 text-center">
-            <span class="flex h-14 w-14 items-center justify-center rounded-full bg-cream-dark text-olive-dark dark:bg-espresso dark:text-olive-light" aria-hidden="true">
+            <span class="flex h-14 w-14 items-center justify-center rounded-full bg-cream-dark text-olive-dark dark:bg-surface-tertiary dark:text-accent" aria-hidden="true">
               <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
                 <path
                   stroke-linecap="round"
@@ -82,7 +82,7 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown))
             <li
               v-for="item in cart.items"
               :key="item.id"
-              class="flex gap-4 rounded-2xl bg-white p-4 shadow-soft dark:bg-espresso"
+              class="flex gap-4 rounded-2xl bg-white p-4 shadow-soft dark:bg-surface-secondary"
             >
               <NuxtImg
                 :src="item.image"
@@ -94,10 +94,10 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown))
               />
               <div class="min-w-0 flex-1">
                 <div class="flex items-start justify-between gap-2">
-                  <p class="truncate text-sm font-semibold text-espresso dark:text-cream">{{ item.name }}</p>
+                  <p class="truncate text-sm font-semibold text-espresso dark:text-ink-primary">{{ item.name }}</p>
                   <button
                     type="button"
-                    class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-muted transition hover:bg-espresso/5 hover:text-espresso dark:hover:bg-cream/10 dark:hover:text-cream"
+                    class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-muted transition hover:bg-espresso/5 hover:text-espresso dark:hover:bg-surface-tertiary dark:hover:text-ink-primary"
                     :aria-label="`Remover ${item.name} do pedido`"
                     @click="cart.removeItem(item.id)"
                   >
@@ -119,13 +119,13 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown))
 
                 <div class="mt-2 flex items-center justify-between gap-3">
                   <div
-                    class="inline-flex items-center gap-1 rounded-full border border-espresso/15 bg-cream p-0.5 dark:border-cream/15 dark:bg-espresso-deep"
+                    class="inline-flex items-center gap-1 rounded-full border border-espresso/15 bg-cream p-0.5 dark:border-line dark:bg-surface-tertiary"
                     role="group"
                     :aria-label="`Quantidade de ${item.name}`"
                   >
                     <button
                       type="button"
-                      class="flex h-7 w-7 items-center justify-center rounded-full text-base text-espresso transition hover:bg-espresso/5 disabled:cursor-not-allowed disabled:opacity-30 dark:text-cream dark:hover:bg-cream/5"
+                      class="flex h-7 w-7 items-center justify-center rounded-full text-base text-espresso transition hover:bg-espresso/5 disabled:cursor-not-allowed disabled:opacity-30 dark:text-ink-primary dark:hover:bg-surface-tertiary"
                       aria-label="Diminuir quantidade"
                       :disabled="item.quantity <= 1"
                       @click="cart.setQuantity(item.id, item.quantity - 1)"
@@ -137,14 +137,14 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown))
                     </span>
                     <button
                       type="button"
-                      class="flex h-7 w-7 items-center justify-center rounded-full text-base text-espresso transition hover:bg-espresso/5 dark:text-cream dark:hover:bg-cream/5"
+                      class="flex h-7 w-7 items-center justify-center rounded-full text-base text-espresso transition hover:bg-espresso/5 dark:text-ink-primary dark:hover:bg-surface-tertiary"
                       aria-label="Aumentar quantidade"
                       @click="cart.setQuantity(item.id, item.quantity + 1)"
                     >
                       +
                     </button>
                   </div>
-                  <p class="text-sm font-semibold text-espresso dark:text-cream">
+                  <p class="text-sm font-semibold text-espresso dark:text-ink-primary">
                     {{ formatPrice(item.unitPrice * item.quantity) }}
                   </p>
                 </div>
@@ -153,14 +153,14 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown))
           </ul>
         </div>
 
-        <footer v-if="cart.items.length > 0" class="border-t border-espresso/10 bg-cream/80 px-6 pb-6 pt-4 dark:border-cream/10 dark:bg-espresso-deep/80">
+        <footer v-if="cart.items.length > 0" class="border-t border-espresso/10 bg-cream/80 px-6 pb-6 pt-4 dark:border-line dark:bg-surface-primary">
           <div class="flex items-center justify-between text-sm">
             <span class="text-muted">Subtotal</span>
-            <span class="font-medium text-espresso dark:text-cream">{{ formatPrice(cart.total) }}</span>
+            <span class="font-medium text-espresso dark:text-ink-primary">{{ formatPrice(cart.total) }}</span>
           </div>
           <div class="mt-1.5 flex items-center justify-between">
-            <span class="text-sm font-medium text-espresso dark:text-cream">Total</span>
-            <span class="text-xl font-semibold text-espresso dark:text-cream">{{ formatPrice(cart.total) }}</span>
+            <span class="text-sm font-medium text-espresso dark:text-ink-primary">Total</span>
+            <span class="text-xl font-semibold text-espresso dark:text-ink-primary">{{ formatPrice(cart.total) }}</span>
           </div>
           <button type="button" class="btn-secondary mt-4 w-full" aria-label="Finalizar pedido">
             Finalizar pedido →

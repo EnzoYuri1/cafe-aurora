@@ -160,7 +160,7 @@ useSeoMeta({
       </div>
     </section>
 
-    <section class="border-t border-espresso/10 py-14 sm:py-20 dark:border-cream/10" aria-labelledby="relacionados-title">
+    <section class="border-t border-espresso/10 py-14 sm:py-20 dark:border-line" aria-labelledby="relacionados-title">
       <div class="container-page">
         <h2 id="relacionados-title" class="text-2xl sm:text-3xl">
           Você também pode gostar

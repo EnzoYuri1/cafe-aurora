@@ -27,7 +27,26 @@ export default {
           light: '#6E7F61',
           dark: '#48573E'
         },
-        muted: '#8C7B6B'
+        muted: '#8C7B6B',
+        surface: {
+          primary: 'var(--bg-primary)',
+          secondary: 'var(--bg-secondary)',
+          tertiary: 'var(--bg-tertiary)'
+        },
+        ink: {
+          primary: 'var(--text-primary)',
+          secondary: 'var(--text-secondary)',
+          muted: 'var(--text-muted)'
+        },
+        accent: {
+          DEFAULT: 'var(--accent-primary)',
+          hover: 'var(--accent-hover)'
+        },
+        btn: {
+          bg: 'var(--btn-primary-bg)',
+          text: 'var(--btn-primary-text)'
+        },
+        line: 'var(--border-color)'
       },
       fontFamily: {
         serif: ['"Playfair Display"', 'Georgia', 'serif'],

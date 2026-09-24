@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import RevealOnScroll from '~/components/RevealOnScroll.vue'
 import { addonOptions, getRelatedProducts, getProductBySlug, sizeOptions } from '~/data/products'
 
 const route = useRoute()
@@ -87,12 +88,15 @@ useSeoMeta({
         </nav>
 
         <div class="grid gap-10 lg:grid-cols-2 lg:gap-16">
-          <LazyImage
+          <NuxtImg
             :src="current.image"
             :alt="current.imageAlt"
-            class="h-[320px] w-full rounded-card shadow-soft sm:h-[480px]"
-            width="900"
-            height="900"
+            class="h-[320px] w-full rounded-card object-cover shadow-soft sm:h-[480px]"
+            loading="eager"
+            :width="800"
+            :height="600"
+            fetchpriority="high"
+            preload
           />
 
           <div class="max-w-xl">

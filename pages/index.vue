@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import RevealOnScroll from '~/components/RevealOnScroll.vue'
 import { products } from '~/data/products'
 
 const featured = ['cappuccino', 'cold-brew', 'croissant']
@@ -81,13 +82,15 @@ useSeoMeta({
         </div>
 
         <div class="relative">
-          <LazyImage
-            src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=80"
+          <NuxtImg
+            src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=75"
             alt="Interior aconchegante da cafeteria com xícara de café em primeiro plano"
-            class="h-[360px] w-full rounded-card shadow-lift sm:h-[460px]"
-            width="1200"
-            height="900"
+            class="h-[360px] w-full rounded-card object-cover shadow-lift sm:h-[460px]"
             loading="eager"
+            :width="800"
+            :height="600"
+            fetchpriority="high"
+            preload
           />
         </div>
       </div>
@@ -123,12 +126,13 @@ useSeoMeta({
     <!-- Sobre -->
     <section id="sobre" class="bg-white py-16 sm:py-24 dark:bg-espresso" aria-labelledby="sobre-title">
       <div class="container-page grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-        <LazyImage
-          src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1200&q=80"
+        <NuxtImg
+          src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=800&q=75"
           alt="Interior da cafeteria com mesas de madeira e luz natural"
-          class="h-[320px] w-full rounded-card shadow-soft sm:h-[440px]"
-          width="1200"
-          height="900"
+          class="h-[320px] w-full rounded-card object-cover shadow-soft sm:h-[440px]"
+          loading="lazy"
+          :width="800"
+          :height="600"
         />
         <RevealOnScroll>
           <div class="max-w-xl">

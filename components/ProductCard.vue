@@ -5,8 +5,9 @@ const props = withDefaults(
   defineProps<{
     product: Product
     ctaLabel?: string
+    priority?: boolean
   }>(),
-  { ctaLabel: 'Pedir agora' }
+  { ctaLabel: 'Pedir agora', priority: false }
 )
 
 const cart = useCartStore()
@@ -35,13 +36,15 @@ const addToCart = () => {
       :aria-label="`Ver detalhes de ${product.name}`"
     >
       <div class="aspect-[4/3] w-full overflow-hidden">
-        <LazyImage
+        <NuxtImg
           :src="product.image"
           :alt="product.imageAlt"
-          class="h-full w-full"
-          img-class="transition duration-500 group-hover:scale-105"
-          width="900"
-          height="675"
+          class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+          :loading="priority ? 'eager' : 'lazy'"
+          :width="priority ? 800 : 400"
+          :height="priority ? 600 : 300"
+          :fetchpriority="priority ? 'high' : 'auto'"
+          :preload="priority"
         />
       </div>
       <div class="flex flex-1 flex-col gap-2 p-6">

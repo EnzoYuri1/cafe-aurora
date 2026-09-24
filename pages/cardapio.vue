@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import RevealOnScroll from '~/components/RevealOnScroll.vue'
 import { menuCategories, products } from '~/data/products'
 import type { ProductCategory } from '~/types'
 
@@ -118,7 +119,7 @@ useSeoMeta({
           :key="product.slug"
           :delay="index * 80"
         >
-          <ProductCard :product="product" cta-label="Adicionar" />
+          <ProductCard :product="product" cta-label="Adicionar" :priority="index === 0" />
         </RevealOnScroll>
       </div>
 

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import RevealOnScroll from '~/components/RevealOnScroll.vue'
+
 const features = [
   {
     icon: 'coffee' as const,
@@ -25,17 +27,17 @@ const features = [
 const galleryPhotos = [
   {
     id: 'v60',
-    src: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80',
+    src: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=400&q=75',
     alt: 'Barista preparando café pelo método de filtro V60 para uma cliente'
   },
   {
     id: 'clientes',
-    src: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80',
+    src: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=400&q=75',
     alt: 'Grupo de clientes conversando e sorrindo em uma mesa da cafeteria'
   },
   {
     id: 'interior',
-    src: 'https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=900&q=80',
+    src: 'https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=400&q=75',
     alt: 'Interior da cafeteria com plantas, prateleiras e balcão'
   }
 ]
@@ -61,12 +63,15 @@ useSeoMeta({
     <section class="container-page pb-16 sm:pb-24" aria-labelledby="historia-title">
       <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
 <div class="overflow-hidden rounded-2xl shadow-md">
-          <LazyImage
-            src="https://images.unsplash.com/photo-1758525225676-329ddcedf78f?w=800&auto=format&fit=crop&q=80"
+          <NuxtImg
+            src="https://images.unsplash.com/photo-1758525225676-329ddcedf78f?w=800&auto=format&fit=crop&q=75"
             alt="Ana e Laura tomando café juntas no Café Aurora"
-            class="h-[320px] w-full sm:h-[440px]"
-            width="1200"
-            height="900"
+            class="h-[320px] w-full object-cover sm:h-[440px]"
+            loading="eager"
+            :width="800"
+            :height="600"
+            fetchpriority="high"
+            preload
           />
         </div>
         <RevealOnScroll>

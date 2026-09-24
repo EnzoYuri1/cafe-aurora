@@ -124,7 +124,7 @@ useSeoMeta({
     </section>
 
     <!-- Sobre -->
-    <section id="sobre" class="bg-white py-16 sm:py-24 dark:bg-espresso" aria-labelledby="sobre-title">
+    <section id="sobre" class="bg-white py-16 sm:py-24 dark:bg-surface-secondary" aria-labelledby="sobre-title">
       <div class="container-page grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <NuxtImg
           src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=800&q=75"
@@ -146,10 +146,6 @@ useSeoMeta({
             <p class="mt-4 leading-relaxed text-muted">
               Um espaço acolhedor para conversar, trabalhar ou simplesmente apreciar um bom café.
             </p>
-            <NuxtLink to="#diferenciais" class="btn-primary mt-8">
-              Conheça nossa história
-              <span aria-hidden="true">→</span>
-            </NuxtLink>
           </div>
         </RevealOnScroll>
       </div>
@@ -183,7 +179,7 @@ useSeoMeta({
     </section>
 
     <!-- Depoimentos -->
-    <section class="bg-sage py-16 sm:py-24 dark:bg-[#2F3B2F]" aria-labelledby="depoimentos-title">
+    <section class="bg-sage py-16 sm:py-24 dark:bg-surface-tertiary" aria-labelledby="depoimentos-title">
       <div class="container-page">
         <RevealOnScroll>
             <div class="max-w-2xl">

@@ -123,7 +123,7 @@ useSeoMeta({
         </div>
       </div>
 
-      <div class="bg-sage py-16 sm:py-24 dark:bg-[#2F3B2F]">
+      <div class="bg-sage py-16 sm:py-24 dark:bg-surface-tertiary">
         <div class="container-page">
           <RevealOnScroll>
             <PhotoGrid :photos="galleryPhotos" />

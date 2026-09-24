@@ -28,7 +28,7 @@ const addToCart = () => {
 
 <template>
   <div
-    class="group flex h-full flex-col overflow-hidden rounded-card bg-white shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-lift dark:bg-espresso"
+    class="group flex h-full flex-col overflow-hidden rounded-card bg-white shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-lift dark:border dark:border-line dark:bg-surface-secondary"
   >
     <NuxtLink
       :to="`/produto/${product.slug}`"
@@ -49,12 +49,12 @@ const addToCart = () => {
       </div>
       <div class="flex flex-1 flex-col gap-2 p-6">
         <div class="flex items-baseline justify-between gap-3">
-          <h3 class="text-xl">{{ product.name }}</h3>
-          <p class="font-sans text-sm font-semibold text-espresso dark:text-cream">
+          <h3 class="text-xl dark:text-ink-primary">{{ product.name }}</h3>
+          <p class="font-sans text-sm font-semibold text-espresso dark:!text-btn-bg">
             {{ formatPrice(product.price) }}
           </p>
         </div>
-        <p class="text-sm leading-relaxed text-muted">{{ product.shortDescription }}</p>
+        <p class="text-sm leading-relaxed text-muted dark:!text-ink-secondary">{{ product.shortDescription }}</p>
       </div>
     </NuxtLink>
 
@@ -70,7 +70,7 @@ const addToCart = () => {
       <NuxtLink
         v-else
         :to="`/produto/${product.slug}`"
-        class="inline-flex items-center gap-1.5 text-sm font-medium text-olive-dark transition group-hover:gap-2.5"
+        class="inline-flex items-center gap-1.5 text-sm font-medium text-olive-dark transition group-hover:gap-2.5 dark:text-accent"
         :aria-label="`${ctaLabel} ${product.name}`"
       >
         {{ ctaLabel }} <span aria-hidden="true">→</span>
